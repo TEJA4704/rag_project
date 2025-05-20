@@ -1,23 +1,25 @@
 # RAG Project for Internal Document Querying
 
-This project implements a Retrieval-Augmented Generation (RAG) system to query internal documents.
+This project implements a Retrieval-Augmented Generation (RAG) system to query internal documents. It retrieves relevant information from a collection of documents and uses that information to generate a more informed and context-aware response to user queries.
 
 ## Project Structure
 
-rag_project/
-├── documents/                # Sample internal documents (PDF, TXT, etc.)
-├── models/                   # LlamaCpp model files (e.g., llama-7b.gguf)
-├── code/
-│   ├── load_documents.py
-│   ├── split_documents.py
-│   ├── generate_embeddings.py
-│   ├── build_vector_store.py
-│   ├── query_vector_store.py
-│   ├── generate_response.py
-│   └── main.py
-├── .env                      # Environment variables
-├── README.md
-└── technical_report.md       # Technical report
+The project is organized as follows:
+
+*   **`rag_project/`**:  Root directory of the project.
+*   **`documents/`**: Contains sample internal documents in various formats (PDF, TXT, etc.). This is where you'll place your own documents for testing and deployment.
+*   **`models/`**:  This directory holds the LlamaCpp model files (e.g., `llama-7b.gguf`).  You're responsible for downloading and placing the appropriate models here.
+*   **`code/`**: Contains all the Python scripts implementing the RAG pipeline.
+    *   **`load_documents.py`**:  Loads documents from the `documents/` directory. Handles various document formats.
+    *   **`split_documents.py`**: Splits the loaded documents into smaller chunks for efficient indexing and retrieval.
+    *   **`generate_embeddings.py`**: Generates embeddings (vector representations) for the document chunks.  This is crucial for semantic search.
+    *   **`build_vector_store.py`**: Creates a vector store (e.g., using FAISS, ChromaDB, etc.) and indexes the document embeddings.
+    *   **`query_vector_store.py`**: Performs semantic search against the vector store to retrieve relevant document chunks based on user queries.
+    *   **`generate_response.py`**:  Uses the retrieved document chunks and the user query to generate a final, augmented response using a Large Language Model (LLM).
+    *   **`main.py`**: The main entry point for running the RAG pipeline.  It orchestrates the different steps.
+*   **`.env`**:  This file stores environment variables (e.g., API keys, model paths, etc.).  **Important:** This file should **not** be committed to version control. Add it to your `.gitignore` file.
+*   **`README.md`**: This file, providing an overview of the project.
+*   **`technical_report.md`**: A more detailed technical report describing the architecture, implementation details, and results of the project.
 
 ## Prerequisites
 
