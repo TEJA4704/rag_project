@@ -2,6 +2,23 @@
 
 This project implements a Retrieval-Augmented Generation (RAG) system to query internal documents.
 
+## Project Structure
+
+rag_project/
+├── documents/                # Sample internal documents (PDF, TXT, etc.)
+├── models/                   # LlamaCpp model files (e.g., llama-7b.gguf)
+├── code/
+│   ├── load_documents.py
+│   ├── split_documents.py
+│   ├── generate_embeddings.py
+│   ├── build_vector_store.py
+│   ├── query_vector_store.py
+│   ├── generate_response.py
+│   └── main.py
+├── .env                      # Environment variables
+├── README.md
+└── technical_report.md       # Technical report
+
 ## Prerequisites
 
 *   Python 3.9+
