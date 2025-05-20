@@ -51,7 +51,8 @@ The system uses `HuggingFaceInferenceAPI` for embedding generation and `faiss` f
 
 ## Future Enhancements
 
-*   Implement more robust document parsing and loading.
-*   Add support for different document types (e.g., PDF).
-*   Improve the quality of generated responses.
-*   Add a user interface.
+*   Web Interface: Add a Streamlit/Flask UI for user interaction.
+*   Real-Time Data Sync: Integrate with Confluence or SharePoint APIs.
+*   Feedback Loop: Allow users to rate responses and refine embeddings.
+*   GPU Acceleration: Use CUDA-enabled FAISS for faster inference.
+*   Summarization: Add a summarizer to condense long documents.
